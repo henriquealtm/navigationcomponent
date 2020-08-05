@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_menu_navigation_graph"
+    app:startDestination="@id/BNFirstFragment">
+
+    <include app:graph="@navigation/simple_navigation_graph" />
+
+    <include app:graph="@navigation/nested_navigation_graph" />
+
+    <fragment
+        android:id="@+id/BNFirstFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.BNFirstFragment"
+        android:label="First Fragment"
+        tools:layout="@layout/fragment_b_n_first">
+
+        <action
+            android:id="@+id/goToSimpleNavigationGraph"
+            app:destination="@id/simple_navigation_graph" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/BNSecondFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.BNSecondFragment"
+        android:label="Second Fragment"
+        tools:layout="@layout/fragment_b_n_second">
+
+        <action
+            android:id="@+id/goToNestedNavigationGraph"
+            app:destination="@id/nested_navigation_graph" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/BNThirdFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.BNThirdFragment"
+        android:label="Third Fragment"
+        tools:layout="@layout/fragment_b_n_third" />
+
+</navigation>
