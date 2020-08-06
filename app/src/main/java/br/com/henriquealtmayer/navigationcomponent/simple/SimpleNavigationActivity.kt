@@ -1,10 +1,9 @@
-package br.com.henriquealtmayer.navigationcomponent.simplenavigation
+package br.com.henriquealtmayer.navigationcomponent.simple
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.henriquealtmayer.navigationcomponent.R
 

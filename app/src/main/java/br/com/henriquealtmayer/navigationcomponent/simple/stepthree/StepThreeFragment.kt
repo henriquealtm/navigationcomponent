@@ -1,4 +1,4 @@
-package br.com.henriquealtmayer.navigationcomponent.simplenavigation.stepthree
+package br.com.henriquealtmayer.navigationcomponent.simple.stepthree
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

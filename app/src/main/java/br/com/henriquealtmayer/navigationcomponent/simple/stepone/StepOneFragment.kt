@@ -1,4 +1,4 @@
-package br.com.henriquealtmayer.navigationcomponent.simplenavigation.stepone
+package br.com.henriquealtmayer.navigationcomponent.simple.stepone
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

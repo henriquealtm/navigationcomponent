@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bottommenunavigation.BottomMenuNavigationActivity"></activity>
-        <activity android:name=".nestednavigation.NestedNavigationActivity" />
-        <activity android:name=".simplenavigation.SimpleNavigationActivity" />
+        <activity android:name=".viewpager2.ViewPager2Activity"></activity>
+        <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".bottommenu.BottomMenuNavigationActivity" />
+        <activity android:name=".nested.NestedNavigationActivity" />
+        <activity android:name=".simple.SimpleNavigationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

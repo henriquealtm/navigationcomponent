@@ -1,4 +1,4 @@
-package br.com.henriquealtmayer.navigationcomponent.nestednavigation
+package br.com.henriquealtmayer.navigationcomponent.nested
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

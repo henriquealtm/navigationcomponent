@@ -1,4 +1,4 @@
-package br.com.henriquealtmayer.navigationcomponent.bottommenunavigation
+package br.com.henriquealtmayer.navigationcomponent.bottommenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

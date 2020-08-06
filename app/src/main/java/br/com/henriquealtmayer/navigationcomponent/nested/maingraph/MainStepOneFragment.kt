@@ -1,4 +1,4 @@
-package br.com.henriquealtmayer.navigationcomponent.nestednavigation.maingraph
+package br.com.henriquealtmayer.navigationcomponent.nested.maingraph
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import br.com.henriquealtmayer.navigationcomponent.R
 import kotlinx.android.synthetic.main.fragment_main_step_one.*
-import kotlinx.android.synthetic.main.fragment_main_step_two.*
-import kotlinx.android.synthetic.main.fragment_step_one.*
 
 class MainStepOneFragment : Fragment() {
 

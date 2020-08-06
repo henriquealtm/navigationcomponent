@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#629526"
-    tools:context=".simplenavigation.stepone.StepOneFragment">
+    tools:context=".simple.stepone.StepOneFragment">
 
     <TextView
         android:id="@+id/tv_step_two"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/stepOneFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.simplenavigation.stepone.StepOneFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.simple.stepone.StepOneFragment"
         android:label="Simple Frag. One"
         tools:layout="@layout/fragment_step_one">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/stepTwoFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.simplenavigation.steptwo.StepTwoFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.simple.steptwo.StepTwoFragment"
         android:label="Simple Frag. Two"
         tools:layout="@layout/fragment_step_two">
         <action
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/stepThreeFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.simplenavigation.stepthree.StepThreeFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.simple.stepthree.StepThreeFragment"
         android:label="Simple Frag. Three"
         tools:layout="@layout/fragment_step_three" />
 
