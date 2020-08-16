@@ -1,20 +1,21 @@
-package br.com.henriquealtmayer.navigationcomponent.nested.maingraph
+package br.com.henriquealtmayer.navigationcomponent.bottommenu.steps
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.henriquealtmayer.navigationcomponent.R
-import kotlinx.android.synthetic.main.fragment_main_step_one.*
+import kotlinx.android.synthetic.main.fragment_b_n_second.*
 
-class MainStepOneFragment : Fragment() {
+class BNSecondFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_main_step_one, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_b_n_second, container, false)
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,8 +24,8 @@ class MainStepOneFragment : Fragment() {
     }
 
     private fun initializeUi() {
-        tv_main_step_one.setOnClickListener {
-            findNavController().navigate(MainStepOneFragmentDirections.goToStepTwo())
+        tv_b_n_first_go_to_nested_graph.setOnClickListener {
+            findNavController().navigate(BNSecondFragmentDirections.goToNestedNavigationGraph())
         }
     }
 

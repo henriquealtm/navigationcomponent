@@ -1,20 +1,20 @@
-package br.com.henriquealtmayer.navigationcomponent.simple
+package br.com.henriquealtmayer.navigationcomponent.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.henriquealtmayer.navigationcomponent.R
 
-class SimpleNavigationActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_simple_navigation)
+        setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.nav_host_fragment)
 
@@ -22,7 +22,7 @@ class SimpleNavigationActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        navController.navigateUp()
+        onBackPressed()
 
         return super.onSupportNavigateUp()
     }

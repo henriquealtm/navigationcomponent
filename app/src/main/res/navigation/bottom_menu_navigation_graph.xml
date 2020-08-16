@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/BNFirstFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.BNFirstFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.steps.BNFirstFragment"
         android:label="First Fragment"
         tools:layout="@layout/fragment_b_n_first">
 
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/BNSecondFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.BNSecondFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.steps.BNSecondFragment"
         android:label="Second Fragment"
         tools:layout="@layout/fragment_b_n_second">
 
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/BNThirdFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.BNThirdFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.steps.BNThirdFragment"
         android:label="Third Fragment"
         tools:layout="@layout/fragment_b_n_third" />
 

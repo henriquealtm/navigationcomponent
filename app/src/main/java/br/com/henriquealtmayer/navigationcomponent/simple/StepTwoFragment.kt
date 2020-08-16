@@ -1,4 +1,4 @@
-package br.com.henriquealtmayer.navigationcomponent.simple.steptwo
+package br.com.henriquealtmayer.navigationcomponent.simple
 
 import android.os.Bundle
 import android.view.LayoutInflater

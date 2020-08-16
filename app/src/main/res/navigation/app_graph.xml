@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.main.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/goToSimpleGraph"
+            app:destination="@id/simple_navigation_graph" />
+        <action
+            android:id="@+id/goToNestedGraph"
+            app:destination="@id/nested_navigation_graph" />
+        <action
+            android:id="@+id/goToBottomMenuContainerFrag"
+            app:destination="@id/bottomMenuContainerFragment2" />
+        <action
+            android:id="@+id/goToCustomBackFrag"
+            app:destination="@id/customBackFragment" />
+    </fragment>
+    <include app:graph="@navigation/simple_navigation_graph" />
+    <include app:graph="@navigation/nested_navigation_graph" />
+    <fragment
+        android:id="@+id/bottomMenuContainerFragment2"
+        android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.BottomMenuContainerFragment"
+        android:label="BottomMenuContainerFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/goToHomeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/app_graph"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/customBackFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.customback.CustomBackFragment"
+        android:label="CustomBackFragment"
+        tools:layout="@layout/fragment_custom_back" />
+
+</navigation>
