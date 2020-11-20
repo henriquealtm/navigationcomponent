@@ -1,2 +1,3 @@
+include ':dynamicfeature'
 include ':app'
 rootProject.name = "NavigationComponent"

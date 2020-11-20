@@ -44,6 +44,8 @@ class HomeFragment : Fragment() {
 
         initializeButtonOnClick(btn_return_result, dir.goToReturnResultFrag())
 
+        initializeButtonOnClick(btn_dynamic_feature_graph, dir.goToDynamicFeatureFrag())
+
         initializeReturnParamObserving()
     }
 

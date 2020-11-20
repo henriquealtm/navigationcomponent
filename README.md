@@ -7,9 +7,11 @@ Sample project for different types of Android Navigation Compoenent using. The c
   - BottomNavigationView
   - Custom Back Navigation
   - Back navigation returning value
+  - Opening graph from dynamic feature
 
 Next samples to be implemented
 
-  - Opening graph from dynamic feature
+  - Deep Link
   - Graph with default animations
   - Graph with custom animations
+  - Kotlin DSL Graph
