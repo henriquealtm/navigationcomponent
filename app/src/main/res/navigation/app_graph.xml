@@ -26,6 +26,9 @@
         <action
             android:id="@+id/goToCustomBackFrag"
             app:destination="@id/customBackFragment" />
+        <action
+            android:id="@+id/goToReturnResultFrag"
+            app:destination="@id/returnResultFragment" />
     </fragment>
 
     <fragment
@@ -50,5 +53,11 @@
         android:name="br.com.henriquealtmayer.navigationcomponent.customback.CustomBackFragment"
         android:label="CustomBackFragment"
         tools:layout="@layout/fragment_custom_back" />
+
+    <fragment
+        android:id="@+id/returnResultFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.returnresult.ReturnResultFragment"
+        android:label="fragment_return_resut_first_step"
+        tools:layout="@layout/fragment_return_result" />
 
 </navigation>

@@ -6,10 +6,10 @@ Sample project for different types of Android Navigation Compoenent using. The c
   - Nested Navigation
   - BottomNavigationView
   - Custom Back Navigation
+  - Back navigation returning value
 
 Next samples to be implemented
 
-  - Back navigation returning value
   - Opening graph from dynamic feature
   - Graph with default animations
   - Graph with custom animations

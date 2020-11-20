@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import br.com.henriquealtmayer.navigationcomponent.R
+import br.com.henriquealtmayer.navigationcomponent.commons.navBackParamMessage
 import br.com.henriquealtmayer.navigationcomponent.commons.showActionBar
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -39,7 +42,9 @@ class HomeFragment : Fragment() {
 
         initializeButtonOnClick(btn_custom_back, dir.goToCustomBackFrag())
 
-        initializeButtonOnClick(btn_return_result, dir.goToCustomBackFrag())
+        initializeButtonOnClick(btn_return_result, dir.goToReturnResultFrag())
+
+        initializeReturnParamObserving()
     }
 
     private fun initializeButtonOnClick(
@@ -49,6 +54,18 @@ class HomeFragment : Fragment() {
         button.setOnClickListener {
             findNavController().navigate(navDirections)
         }
+    }
+
+    private fun initializeReturnParamObserving() {
+        findNavController()
+            .currentBackStackEntry
+            ?.savedStateHandle
+            ?.getLiveData<String>(navBackParamMessage)
+            ?.observe(viewLifecycleOwner, Observer { message ->
+                if (isVisible) {
+                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                }
+            })
     }
 
 }
