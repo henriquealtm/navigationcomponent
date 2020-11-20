@@ -38,6 +38,8 @@ class HomeFragment : Fragment() {
         initializeButtonOnClick(btn_bottom_menu, dir.goToBottomMenuContainerFrag())
 
         initializeButtonOnClick(btn_custom_back, dir.goToCustomBackFrag())
+
+        initializeButtonOnClick(btn_return_result, dir.goToCustomBackFrag())
     }
 
     private fun initializeButtonOnClick(
@@ -48,6 +50,5 @@ class HomeFragment : Fragment() {
             findNavController().navigate(navDirections)
         }
     }
-
 
 }

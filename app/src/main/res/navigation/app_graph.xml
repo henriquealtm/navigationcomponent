@@ -5,11 +5,15 @@
     android:id="@+id/app_graph"
     app:startDestination="@id/splashFragment">
 
+    <include app:graph="@navigation/simple_navigation_graph" />
+
+    <include app:graph="@navigation/nested_navigation_graph" />
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="br.com.henriquealtmayer.navigationcomponent.main.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/goToSimpleGraph"
             app:destination="@id/simple_navigation_graph" />
@@ -23,16 +27,16 @@
             android:id="@+id/goToCustomBackFrag"
             app:destination="@id/customBackFragment" />
     </fragment>
-    <include app:graph="@navigation/simple_navigation_graph" />
-    <include app:graph="@navigation/nested_navigation_graph" />
+
     <fragment
         android:id="@+id/bottomMenuContainerFragment2"
         android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.BottomMenuContainerFragment"
         android:label="BottomMenuContainerFragment" />
+
     <fragment
         android:id="@+id/splashFragment"
         android:name="br.com.henriquealtmayer.navigationcomponent.splash.SplashFragment"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/goToHomeFragment"
             app:destination="@id/homeFragment"
@@ -40,6 +44,7 @@
             app:popUpTo="@id/app_graph"
             app:popUpToInclusive="false" />
     </fragment>
+
     <fragment
         android:id="@+id/customBackFragment"
         android:name="br.com.henriquealtmayer.navigationcomponent.customback.CustomBackFragment"

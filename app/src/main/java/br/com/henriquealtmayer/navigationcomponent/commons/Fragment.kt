@@ -2,6 +2,7 @@ package br.com.henriquealtmayer.navigationcomponent.commons
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 fun Fragment.hideActionBar() {
     when (activity) {
@@ -15,4 +16,14 @@ fun Fragment.showActionBar() {
         is AppCompatActivity -> (activity as? AppCompatActivity)?.supportActionBar?.show()
         else -> activity?.actionBar?.show()
     }
+}
+
+fun <T> Fragment.addBackNavParam(
+    paramTag: String,
+    value: T
+) {
+    findNavController().previousBackStackEntry?.savedStateHandle?.set(
+        paramTag,
+        value
+    )
 }

@@ -14,6 +14,7 @@
             android:id="@+id/goToStepTwo"
             app:destination="@id/stepTwoFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/stepTwoFragment"
         android:name="br.com.henriquealtmayer.navigationcomponent.simple.StepTwoFragment"

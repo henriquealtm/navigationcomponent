@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A630A"
-    tools:context=".simple.StepOneFragment">
+    tools:context=".returnresult.ReturnResultFirstStepFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tv_step_three"
+        android:id="@+id/tv_return_result_first_step"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Step Three"
-        android:textColor="#000"
-        android:textSize="24dp" />
+        android:text="Go To Return Result Second Step"
+        android:textSize="24sp" />
 
 </FrameLayout>

@@ -5,10 +5,11 @@ Sample project for different types of Android Navigation Compoenent using. The c
   - Simple Navigation
   - Nested Navigation
   - BottomNavigationView
+  - Custom Back Navigation
 
 Next samples to be implemented
 
-  - ViewPager Navigation
-  - ViewPager2 Navigation
-  - Custom Back Navigation
-  - Change the whole project to work with Navigation Component
+  - Back navigation returning value
+  - Opening graph from dynamic feature
+  - Graph with default animations
+  - Graph with custom animations

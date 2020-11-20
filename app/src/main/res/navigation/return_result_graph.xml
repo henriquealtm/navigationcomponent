@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/return_result_graph"
+    app:startDestination="@id/returnResultFirstStepFragment">
+
+    <fragment
+        android:id="@+id/returnResultFirstStepFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.returnresult.ReturnResultFirstStepFragment"
+        android:label="fragment_return_resut_first_step"
+        tools:layout="@layout/fragment_return_resut_first_step" >
+        <action
+            android:id="@+id/goToReturnResultSecondStepFrag"
+            app:destination="@id/returnResultSecondStepFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/returnResultSecondStepFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.returnresult.ReturnResultSecondStepFragment"
+        android:label="fragment_return_result_second_step"
+        tools:layout="@layout/fragment_return_result_second_step" />
+</navigation>
