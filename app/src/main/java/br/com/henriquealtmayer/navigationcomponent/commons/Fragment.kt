@@ -49,6 +49,15 @@ fun <T> Fragment.observeBackNavParam(
         })
 }
 
+fun <T> Fragment.removeBackNavParam(
+    paramTag: String
+) {
+    findNavController()
+        .currentBackStackEntry
+        ?.savedStateHandle
+        ?.remove<T>(paramTag)
+}
+
 // Notification - Section
 fun Fragment.showNotification(
     title: String,

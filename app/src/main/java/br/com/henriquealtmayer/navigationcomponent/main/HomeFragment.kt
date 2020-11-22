@@ -10,10 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import br.com.henriquealtmayer.navigationcomponent.R
-import br.com.henriquealtmayer.navigationcomponent.commons.navBackParamMessage
-import br.com.henriquealtmayer.navigationcomponent.commons.observeBackNavParam
-import br.com.henriquealtmayer.navigationcomponent.commons.showActionBar
-import br.com.henriquealtmayer.navigationcomponent.commons.showNotification
+import br.com.henriquealtmayer.navigationcomponent.commons.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 private typealias dir = HomeFragmentDirections
@@ -76,6 +73,7 @@ class HomeFragment : Fragment() {
         observeBackNavParam<String>(navBackParamMessage) { message ->
             if (isVisible) {
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                removeBackNavParam<String>(navBackParamMessage)
             }
         }
     }
