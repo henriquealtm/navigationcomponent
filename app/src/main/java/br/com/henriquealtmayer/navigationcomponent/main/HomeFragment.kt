@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import br.com.henriquealtmayer.navigationcomponent.R
 import br.com.henriquealtmayer.navigationcomponent.commons.*
@@ -41,20 +43,31 @@ class HomeFragment : Fragment() {
         initializeButtonOnClick(btn_custom_back, dir.goToCustomBackFrag())
 
         initializeButtonOnClick(btn_return_result, dir.goToReturnResultFrag())
+        initializeReturnParamObserving()
 
         initializeButtonOnClick(btn_dynamic_feature_graph, dir.goToDynamicFeatureFrag())
 
         initializeDeepLinkButton()
 
-        initializeReturnParamObserving()
+        initializeTransitionButtonClick()
     }
 
     private fun initializeButtonOnClick(
         button: Button,
-        navDirections: NavDirections
+        navDirections: NavDirections,
+        extras: FragmentNavigator.Extras? = null
     ) {
         button.setOnClickListener {
             findNavController().navigate(navDirections)
+        }
+    }
+
+    private fun initializeReturnParamObserving() {
+        observeBackNavParam<String>(navBackParamMessage) { message ->
+            if (isVisible) {
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                removeBackNavParam<String>(navBackParamMessage)
+            }
         }
     }
 
@@ -69,12 +82,15 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initializeReturnParamObserving() {
-        observeBackNavParam<String>(navBackParamMessage) { message ->
-            if (isVisible) {
-                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-                removeBackNavParam<String>(navBackParamMessage)
-            }
+    private fun initializeTransitionButtonClick() {
+        val extras = FragmentNavigatorExtras(btn_element_transition to "btnTransitionName")
+        btn_element_transition.setOnClickListener {
+            findNavController().navigate(
+                R.id.goToTransitionFrag,
+                null,
+                null,
+                extras
+            )
         }
     }
 

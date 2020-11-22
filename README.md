@@ -11,8 +11,8 @@ Sample project for different types of Android Navigation Compoenent using. The c
   - Deep Link with shortcut
   - Deep Link with Notification
   - Default navigation animations
+  - Navigation with shared element transitions
 
 Next samples to be implemented
 
-  - Graph with custom animations
   - Kotlin DSL Graph

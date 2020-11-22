@@ -64,6 +64,9 @@
         <action
             android:id="@+id/goToDynamicFeatureFrag"
             app:destination="@id/dynamicFeatureFrag" />
+        <action
+            android:id="@+id/goToTransitionFrag"
+            app:destination="@id/transitionFragment" />
     </fragment>
 
     <fragment
@@ -94,5 +97,9 @@
         app:moduleName="dynamicfeature"
         android:label="Dynamic Feature Fragment"
         tools:layout="@layout/fragment_dynamic_feature" />
+    <fragment
+        android:id="@+id/transitionFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.transition.TransitionFragment"
+        android:label="TransitionFragment" />
 
 </navigation>
