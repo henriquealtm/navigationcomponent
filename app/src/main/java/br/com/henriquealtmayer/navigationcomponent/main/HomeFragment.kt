@@ -34,7 +34,8 @@ class HomeFragment : Fragment() {
 
     private fun initializeUi() {
         showActionBar()
-//        initializeButtonOnClick(btn_simple_navigation, dir.goToSimpleGraph())
+
+        initializeButtonOnClick(btn_simple_navigation, dir.goToSimpleGraph())
 
         initializeButtonOnClick(btn_nested_navigation, dir.goToNestedGraph())
 
@@ -64,9 +65,9 @@ class HomeFragment : Fragment() {
         btn_deep_link.setOnClickListener {
             showNotification(
                 title = "Deep Link",
-                text = "Open deep link in simple graph",
+                text = "Open deep link in simple graph (third screen)",
                 smallIcon = R.drawable.ic_launcher_background,
-                destinationGraphId = R.id.bottomMenuContainerFragment
+                destinationGraphId = R.id.stepThreeFragment
             )
         }
     }

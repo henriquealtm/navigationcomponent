@@ -5,7 +5,7 @@
     android:id="@+id/app_graph"
     app:startDestination="@id/splashFragment">
 
-<!--    <include app:graph="@navigation/simple_navigation_graph" />-->
+    <include app:graph="@navigation/simple_navigation_graph" />
 
     <include app:graph="@navigation/nested_navigation_graph" />
 
@@ -14,9 +14,9 @@
         android:name="br.com.henriquealtmayer.navigationcomponent.main.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
-<!--        <action-->
-<!--            android:id="@+id/goToSimpleGraph"-->
-<!--            app:destination="@id/simple_navigation_graph" />-->
+        <action
+            android:id="@+id/goToSimpleGraph"
+            app:destination="@id/simple_navigation_graph" />
         <action
             android:id="@+id/goToNestedGraph"
             app:destination="@id/nested_navigation_graph" />
