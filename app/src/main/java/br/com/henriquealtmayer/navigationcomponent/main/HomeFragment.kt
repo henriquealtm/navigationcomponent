@@ -1,26 +1,19 @@
 package br.com.henriquealtmayer.navigationcomponent.main
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import br.com.henriquealtmayer.navigationcomponent.R
 import br.com.henriquealtmayer.navigationcomponent.commons.navBackParamMessage
 import br.com.henriquealtmayer.navigationcomponent.commons.observeBackNavParam
 import br.com.henriquealtmayer.navigationcomponent.commons.showActionBar
+import br.com.henriquealtmayer.navigationcomponent.commons.showNotification
 import kotlinx.android.synthetic.main.fragment_home.*
 
 private typealias dir = HomeFragmentDirections
@@ -41,7 +34,6 @@ class HomeFragment : Fragment() {
 
     private fun initializeUi() {
         showActionBar()
-
 //        initializeButtonOnClick(btn_simple_navigation, dir.goToSimpleGraph())
 
         initializeButtonOnClick(btn_nested_navigation, dir.goToNestedGraph())
@@ -54,7 +46,7 @@ class HomeFragment : Fragment() {
 
         initializeButtonOnClick(btn_dynamic_feature_graph, dir.goToDynamicFeatureFrag())
 
-        initializeButtonOnClick(btn_deep_link, dir.goToDynamicFeatureFrag())
+        initializeDeepLinkButton()
 
         initializeReturnParamObserving()
     }
@@ -65,6 +57,17 @@ class HomeFragment : Fragment() {
     ) {
         button.setOnClickListener {
             findNavController().navigate(navDirections)
+        }
+    }
+
+    private fun initializeDeepLinkButton() {
+        btn_deep_link.setOnClickListener {
+            showNotification(
+                title = "Deep Link",
+                text = "Open deep link in simple graph",
+                smallIcon = R.drawable.ic_launcher_background,
+                destinationGraphId = R.id.bottomMenuContainerFragment
+            )
         }
     }
 

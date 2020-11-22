@@ -1,6 +1,7 @@
 package br.com.henriquealtmayer.navigationcomponent.commons
 
-import android.widget.Toast
+import androidx.annotation.DrawableRes
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -49,19 +50,38 @@ fun <T> Fragment.observeBackNavParam(
 }
 
 // Notification - Section
-fun Fragment.showNotification() {
-    context?.initializeNotificationChannel()
+fun Fragment.showNotification(
+    title: String,
+    text: String,
+    @DrawableRes smallIcon: Int,
+    @IdRes destinationGraphId: Int? = null,
+    channelId: String = defaultNotificationChannelId
+) {
+    requireContext().initializeNotificationChannel(channelId = channelId)
 
-    val builder = NotificationCompat.Builder(requireContext(), "123")
-    builder.setContentTitle("Titulo do push")
-        .setSmallIcon(R.drawable.ic_first)
-    val text = "Texto"
+    val builder = NotificationCompat.Builder(requireContext(), channelId)
+        .setContentTitle(title)
+        .setSmallIcon(smallIcon)
+
+    val pendingIntent = destinationGraphId?.let {
+        findNavController()
+            .createDeepLink()
+            .setDestination(destinationGraphId)
+            .createPendingIntent()
+    }
+
     val notification = builder.setContentText(text)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
         .setAutoCancel(true)
+        .apply {
+            pendingIntent?.let { intent ->
+                setContentIntent(intent)
+            }
+        }
         .build()
-    val notificationManager =
-        NotificationManagerCompat.from(requireContext())
-    notificationManager.cancelAll()
-    notificationManager.notify(id, notification)
+
+    NotificationManagerCompat.from(requireContext()).apply {
+        cancelAll()
+        notify(id, notification)
+    }
 }

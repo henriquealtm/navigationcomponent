@@ -6,20 +6,26 @@ import android.content.Context
 import android.os.Build
 import androidx.core.content.ContextCompat
 
-fun Context.initializeNotificationChannel() {
+fun Context.initializeNotificationChannel(
+    channelName: String = defaultNotificationChannel,
+    channelDescription: String = defaultNotificationChannelDescription,
+    channelId: String = defaultNotificationChannelId
+) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        val name = "channelName"
-        val descriptionText = "descricaoDoCanal"
-        val importance = NotificationManager.IMPORTANCE_DEFAULT
-        val channel = NotificationChannel("123", name, importance).apply {
-            description = descriptionText
+        val channel = NotificationChannel(
+            channelId,
+            channelName,
+            NotificationManager.IMPORTANCE_DEFAULT
+        ).apply {
+            description = channelDescription
         }
+
         // Register the channel with the system
-        val notificationManager: NotificationManager =
-            ContextCompat.getSystemService(
-                this,
-                NotificationManager::class.java
-            ) as NotificationManager
-        notificationManager.createNotificationChannel(channel)
+        val notificationManager = ContextCompat.getSystemService(
+            this,
+            NotificationManager::class.java
+        )
+
+        notificationManager?.createNotificationChannel(channel)
     }
 }

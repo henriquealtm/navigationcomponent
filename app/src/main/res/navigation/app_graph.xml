@@ -22,7 +22,7 @@
             app:destination="@id/nested_navigation_graph" />
         <action
             android:id="@+id/goToBottomMenuContainerFrag"
-            app:destination="@id/bottomMenuContainerFragment2" />
+            app:destination="@id/bottomMenuContainerFragment" />
         <action
             android:id="@+id/goToCustomBackFrag"
             app:destination="@id/customBackFragment" />
@@ -35,7 +35,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/bottomMenuContainerFragment2"
+        android:id="@+id/bottomMenuContainerFragment"
         android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.BottomMenuContainerFragment"
         android:label="BottomMenuContainerFragment"
         tools:layout="@layout/fragment_bottom_menu_container">
