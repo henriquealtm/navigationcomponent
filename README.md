@@ -10,9 +10,9 @@ Sample project for different types of Android Navigation Compoenent using. The c
   - Opening graph from dynamic feature
   - Deep Link with shortcut
   - Deep Link with Notification
+  - Default navigation animations
 
 Next samples to be implemented
 
-  - Graph with default animations
   - Graph with custom animations
   - Kotlin DSL Graph
