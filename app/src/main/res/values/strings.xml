@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_dynamicfeature">Dynamic Feature for Navigation Sample</string>
+
+    <!-- Shortcut -->
+    <string name="shortcut_label">Bottom Navigation</string>
+    <string name="shortcut_long_label">Go to the Bottom Navigation</string>
+    <string name="shortcut_disable_message">Sorry :(</string>
 </resources>
