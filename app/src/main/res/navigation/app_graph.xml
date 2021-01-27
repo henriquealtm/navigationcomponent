@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/goToHomeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/app_graph"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <include app:graph="@navigation/simple_navigation_graph" />
+
+    <include app:graph="@navigation/nested_navigation_graph" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.main.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/goToSimpleGraph"
+            app:destination="@id/simple_navigation_graph"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/goToNestedGraph"
+            app:destination="@id/nested_navigation_graph"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+        <action
+            android:id="@+id/goToBottomMenuContainerFrag"
+            app:destination="@id/bottomMenuContainerFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/goToCustomBackFrag"
+            app:destination="@id/customBackFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/goToReturnResultFrag"
+            app:destination="@id/returnResultFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/goToDynamicFeatureFrag"
+            app:destination="@id/dynamicFeatureFrag" />
+        <action
+            android:id="@+id/goToTransitionFrag"
+            app:destination="@id/transitionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottomMenuContainerFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.bottommenu.BottomMenuContainerFragment"
+        android:label="BottomMenuContainerFragment"
+        tools:layout="@layout/fragment_bottom_menu_container">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="navigationcomponent://tst.com/bottomnavigation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/customBackFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.customback.CustomBackFragment"
+        android:label="Custom Back Fragment"
+        tools:layout="@layout/fragment_custom_back" />
+
+    <fragment
+        android:id="@+id/returnResultFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.returnresult.ReturnResultFragment"
+        android:label="Return Result Fragment"
+        tools:layout="@layout/fragment_return_result" />
+
+    <fragment
+        android:id="@+id/dynamicFeatureFrag"
+        android:name="br.com.henriquealtmayer.dynamicfeature.DynamicFeatureFragment"
+        app:moduleName="dynamicfeature"
+        android:label="Dynamic Feature Fragment"
+        tools:layout="@layout/fragment_dynamic_feature" />
+    <fragment
+        android:id="@+id/transitionFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.transition.TransitionFragment"
+        android:label="TransitionFragment" />
+
+</navigation>

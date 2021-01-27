@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/mainStepOneFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.nested.maingraph.MainStepOneFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.nested.MainStepOneFragment"
         android:label="Nested Frag. One"
         tools:layout="@layout/fragment_main_step_one">
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/stepTwoFragment"
-        android:name="br.com.henriquealtmayer.navigationcomponent.nested.maingraph.MainStepTwoFragment"
+        android:name="br.com.henriquealtmayer.navigationcomponent.nested.MainStepTwoFragment"
         android:label="Nested Frag. Two"
         tools:layout="@layout/fragment_main_step_two">
 
